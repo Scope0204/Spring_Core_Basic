@@ -1,11 +1,9 @@
 package hello.core.order;
 
 import hello.core.discount.DiscountPolicy;
-import hello.core.discount.FixDiscountPolicy;
-import hello.core.discount.RateDiscountPolicy;
 import hello.core.member.Member;
 import hello.core.member.MemberRepository;
-import hello.core.member.MemoryMemberRepository;
+
 
 public class OrderServiceImpl implements OrderService{
 
@@ -24,7 +22,6 @@ public class OrderServiceImpl implements OrderService{
         Member member = memberRepository.findById(memberId);  // comm + option + v
         // 할인 정책에 회원 정보, 물건 가격을 넘김
         int discountPrice = discountPolicy.discount(member, itemPrice);
-
         // 단일 체계 원칙을 잘 지킴
 
         return new Order(memberId, itemName, itemPrice, discountPrice);
