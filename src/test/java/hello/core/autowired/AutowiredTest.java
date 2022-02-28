@@ -23,7 +23,7 @@ public class AutowiredTest {
 
         @Autowired
         public void setNoBean2(@Nullable Member noBean2){
-            System.out.println("noBean1 = " + noBean2);
+            System.out.println("noBean2 = " + noBean2);
         }
 
         @Autowired
